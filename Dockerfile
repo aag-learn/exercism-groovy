@@ -7,7 +7,7 @@ RUN usermod --uid $USERID groovy && \
     find / -gid 1000 -exec chgrp -R $USERID \{\}  \; ; \
     find / -uid 1000 -exec chown -R $USERID \{\}  \; || true
 RUN apt-get update && \
-    apt-get install -y vim zip
+    apt-get install -y vim zip git
 
 USER groovy
 
