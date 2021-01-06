@@ -1,17 +1,12 @@
 class Raindrops {
 
     String convert(num) {
-        String ret =  ""
+        String raindrops =  ""
 
-        if ( !isDivisableByThreeFiveOrSeven(num) ) {
-            ret+= num.toString()
-        } else {
-            if ( isDivisibleByThree(num) ) ret += "Pling"
-            if ( isDivisibleByFive(num) ) ret += "Plang"
-            if ( isDivisibleBySeven(num) ) ret += "Plong"
-        }
-
-        ret
+        if ( isDivisibleByThree(num) ) raindrops += "Pling"
+        if ( isDivisibleByFive(num) ) raindrops += "Plang"
+        if ( isDivisibleBySeven(num) ) raindrops += "Plong"
+        raindrops ?: num
     }
 
     private
@@ -24,8 +19,5 @@ class Raindrops {
     }
     Boolean isDivisibleBySeven(num) {
         num % 7 == 0
-    }
-    Boolean isDivisableByThreeFiveOrSeven(num) {
-        isDivisibleByThree(num) || num % 5 == 0 || num % 7 == 0
     }
 }
